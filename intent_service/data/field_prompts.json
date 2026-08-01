@@ -1,0 +1,37 @@
+{
+  "_comment": "Follow-up question templates for eligibility-rule fields, keyed by field name then language (ISO 639-1). A field that isn't listed here at all still works - services/field_prompt_service.py falls back to a generic, humanized question built from the field name and its inferred type, purely from data already in official_service_registry (the eligibility rule's operator/value). Adding these entries only makes the question read more naturally; it is never required for a new service/field to function in a conversation.",
+  "prompts": {
+    "applicant_age": {
+      "en": "What is your age?",
+      "hi": "आपकी उम्र क्या है?",
+      "mr": "तुमचे वय किती आहे?",
+      "bn": "আপনার বয়স কত?",
+      "ta": "உங்கள் வயது என்ன?",
+      "te": "మీ వయస్సు ఎంత?"
+    },
+    "has_existing_aadhaar": {
+      "en": "Do you already have an Aadhaar number? (yes/no)",
+      "hi": "क्या आपके पास पहले से आधार नंबर है? (हां/नहीं)",
+      "mr": "तुमच्याकडे आधीच आधार क्रमांक आहे का? (होय/नाही)",
+      "bn": "আপনার কি ইতিমধ্যে আধার নম্বর আছে? (হ্যাঁ/না)",
+      "ta": "உங்களிடம் ஏற்கனவே ஆதார் எண் உள்ளதா? (ஆம்/இல்லை)",
+      "te": "మీకు ఇప్పటికే ఆధార్ నంబర్ ఉందా? (అవును/కాదు)"
+    },
+    "has_active_account": {
+      "en": "Do you have an active bank account with this bank? (yes/no)",
+      "hi": "क्या इस बैंक में आपका सक्रिय खाता है? (हां/नहीं)",
+      "mr": "या बँकेत तुमचे सक्रिय खाते आहे का? (होय/नाही)",
+      "bn": "এই ব্যাংকে আপনার কি সক্রিয় অ্যাকাউন্ট আছে? (হ্যাঁ/না)",
+      "ta": "இந்த வங்கியில் உங்களுக்கு செயலில் உள்ள கணக்கு உள்ளதா? (ஆம்/இல்லை)",
+      "te": "ఈ బ్యాంకులో మీకు యాక్టివ్ ఖాతా ఉందా? (అవును/కాదు)"
+    },
+    "has_active_policy": {
+      "en": "Do you have an active policy number for this? (yes/no)",
+      "hi": "क्या आपके पास इसके लिए सक्रिय पॉलिसी नंबर है? (हां/नहीं)",
+      "mr": "यासाठी तुमच्याकडे सक्रिय पॉलिसी क्रमांक आहे का? (होय/नाही)",
+      "bn": "এর জন্য আপনার কি সক্রিয় পলিসি নম্বর আছে? (হ্যাঁ/না)",
+      "ta": "இதற்கான செயலில் உள்ள பாலிசி எண் உங்களிடம் உள்ளதா? (ஆம்/இல்லை)",
+      "te": "దీని కోసం మీకు యాక్టివ్ పాలసీ నంబర్ ఉందా? (అవును/కాదు)"
+    }
+  }
+}

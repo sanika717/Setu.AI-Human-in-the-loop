@@ -1,0 +1,116 @@
+{
+  "_comment": "Phase C3 Telugu (te) intent taxonomy for Sahaay.AI's KeywordIntentClassifier. Same intent_id set, labels, and service_category_hint values as data/intents.json (English) - only the keyword phrases and weights are localized.",
+  "language": "te",
+  "intents": [
+    {
+      "intent_id": "pension_application",
+      "label": "Apply for a pension",
+      "service_category_hint": "pension",
+      "keywords": [
+        {"phrase": "వృద్ధాప్య పింఛను", "weight": 3},
+        {"phrase": "వితంతు పింఛను", "weight": 3},
+        {"phrase": "వికలాంగుల పింఛను", "weight": 3},
+        {"phrase": "కుటుంబ ప్రయోజన పింఛను", "weight": 3},
+        {"phrase": "పింఛను", "weight": 2},
+        {"phrase": "ఎన్ఎస్ఏపి", "weight": 2},
+        {"phrase": "నెలవారీ భత్యం", "weight": 1},
+        {"phrase": "సీనియర్ సిటిజన్ ప్రయోజనం", "weight": 1},
+        {"phrase": "పింఛను కోసం దరఖాస్తు", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "identity_document_update",
+      "label": "Update or apply for an identity document",
+      "service_category_hint": "identity",
+      "keywords": [
+        {"phrase": "ఆధార్", "weight": 3},
+        {"phrase": "చిరునామా నవీకరించండి", "weight": 2},
+        {"phrase": "పాస్‌పోర్ట్", "weight": 3},
+        {"phrase": "నా ఆధార్‌ను నవీకరించండి", "weight": 3},
+        {"phrase": "కొత్త పాస్‌పోర్ట్", "weight": 2},
+        {"phrase": "పాస్‌పోర్ట్ పునరుద్ధరణ", "weight": 2},
+        {"phrase": "గుర్తింపు పత్రం", "weight": 2},
+        {"phrase": "గుర్తింపు రుజువు", "weight": 1},
+        {"phrase": "బయోమెట్రిక్ నవీకరణ", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "banking_kyc",
+      "label": "Bank account or KYC update",
+      "service_category_hint": "banking",
+      "keywords": [
+        {"phrase": "కేవైసీ", "weight": 3},
+        {"phrase": "బ్యాంకు ఖాతా", "weight": 2},
+        {"phrase": "ఎస్‌బిఐ", "weight": 2},
+        {"phrase": "నా కేవైసీని నవీకరించండి", "weight": 3},
+        {"phrase": "బ్యాంకు పాస్‌బుక్", "weight": 2},
+        {"phrase": "ఖాతా వివరాలు", "weight": 1},
+        {"phrase": "రీ-కేవైసీ", "weight": 3},
+        {"phrase": "బ్యాంకు శాఖ", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "tax_services",
+      "label": "PAN card / tax-related service",
+      "service_category_hint": "tax",
+      "keywords": [
+        {"phrase": "పాన్ కార్డ్", "weight": 3},
+        {"phrase": "పాన్ నంబర్", "weight": 2},
+        {"phrase": "ఆదాయపు పన్ను", "weight": 2},
+        {"phrase": "పన్ను దాఖలు", "weight": 2},
+        {"phrase": "పాన్ కోసం దరఖాస్తు", "weight": 3},
+        {"phrase": "శాశ్వత ఖాతా సంఖ్య", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "insurance_services",
+      "label": "Insurance premium or policy service",
+      "service_category_hint": "insurance",
+      "keywords": [
+        {"phrase": "ఎల్ఐసి", "weight": 3},
+        {"phrase": "బీమా ప్రీమియం", "weight": 3},
+        {"phrase": "పాలసీ చెల్లింపు", "weight": 2},
+        {"phrase": "నా ప్రీమియం చెల్లించండి", "weight": 3},
+        {"phrase": "జీవిత బీమా", "weight": 2},
+        {"phrase": "పాలసీ నంబర్", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "application_status_check",
+      "label": "Check status of an existing application",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "నా దరఖాస్తు స్థితి", "weight": 3},
+        {"phrase": "దరఖాస్తు స్థితి", "weight": 3},
+        {"phrase": "నా దరఖాస్తును ట్రాక్ చేయండి", "weight": 2},
+        {"phrase": "నా దరఖాస్తు ఆమోదించబడిందా", "weight": 3},
+        {"phrase": "నాకు ఏమి జరిగింది", "weight": 1},
+        {"phrase": "స్థితిని తనిఖీ చేయండి", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "general_help",
+      "label": "General guidance or \"what can you help with\"",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "మీరు ఏమి సహాయం చేయగలరు", "weight": 3},
+        {"phrase": "ఇది ఎలా పనిచేస్తుంది", "weight": 2},
+        {"phrase": "నాకు సహాయం కావాలి", "weight": 2},
+        {"phrase": "ఏ సేవలు", "weight": 2},
+        {"phrase": "నాకు మార్గనిర్దేశం చేయండి", "weight": 1},
+        {"phrase": "నాకు సహాయం చేయండి", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "greeting",
+      "label": "Greeting / small talk",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "నమస్తే", "weight": 2},
+        {"phrase": "శుభోదయం", "weight": 2},
+        {"phrase": "శుభ మధ్యాహ్నం", "weight": 2},
+        {"phrase": "ధన్యవాదాలు", "weight": 1}
+      ]
+    }
+  ]
+}

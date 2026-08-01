@@ -1,0 +1,22 @@
+{
+  "applicant_id": "456",
+  "service_id": "nsap_old_age_pension",
+  "applicant_age": 45,
+  "documents": [
+    {
+      "type": "aadhaar",
+      "text": "xx",
+      "metadata": {
+        "file_name": "aadhaar.gif",
+        "mime_type": "image/gif",
+        "size_bytes": 0,
+        "page_count": 1
+      }
+    },
+    {
+      "type": "ration_card",
+      "text": "Ration card details for household",
+      "metadata": null
+    }
+  ]
+}

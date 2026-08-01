@@ -1,0 +1,67 @@
+{
+  "applicant_id": "123",
+  "service_id": "nsap_old_age_pension",
+  "applicant_age": 65,
+  "documents": [
+    {
+      "type": "aadhaar",
+      "text": "Applicant Name: Ramesh Patil, Aadhaar Number: 1234 5678 9012",
+      "metadata": {
+        "file_name": "aadhaar.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 245760,
+        "page_count": 1
+      }
+    },
+    {
+      "type": "income_certificate",
+      "text": "Pension Type: Old Age, Annual Income: Rs. 45,000",
+      "metadata": {
+        "file_name": "income_certificate.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 189440,
+        "page_count": 1
+      }
+    },
+    {
+      "type": "age_proof",
+      "text": "Date of Birth: 12-04-1960",
+      "metadata": {
+        "file_name": "age_proof.jpg",
+        "mime_type": "image/jpeg",
+        "size_bytes": 512000,
+        "page_count": 1
+      }
+    },
+    {
+      "type": "address_proof",
+      "text": "Residential Address: 12 MG Road, Pune, Maharashtra",
+      "metadata": {
+        "file_name": "address_proof.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 220000,
+        "page_count": 1
+      }
+    },
+    {
+      "type": "bank_passbook",
+      "text": "Bank: State Bank of India, Account Number: 987654321012",
+      "metadata": {
+        "file_name": "bank_passbook.jpg",
+        "mime_type": "image/jpeg",
+        "size_bytes": 300000,
+        "page_count": 1
+      }
+    },
+    {
+      "type": "passport_photo",
+      "text": "Passport size photograph",
+      "metadata": {
+        "file_name": "photo.jpg",
+        "mime_type": "image/jpeg",
+        "size_bytes": 80000,
+        "page_count": null
+      }
+    }
+  ]
+}

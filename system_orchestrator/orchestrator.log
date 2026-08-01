@@ -1,0 +1,16 @@
+INFO:     Will watch for changes in these directories: ['/Users/sanik/Downloads/sahaay/system_orchestrator']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [32995] using WatchFiles
+/Users/sanik/Downloads/sahaay/system_orchestrator/app/models/schemas.py:6: UserWarning: Field name "schema" in "ExtractionRequest" shadows an attribute in parent "BaseModel"
+  class ExtractionRequest(BaseModel):
+INFO:     Started server process [33044]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49985 - "GET /api/v1/portals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50002 - "GET /api/v1/portals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50028 - "OPTIONS /api/v1/conversation/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50029 - "POST /api/v1/conversation/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50055 - "POST /api/v1/conversation/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50059 - "POST /api/v1/conversation/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50063 - "OPTIONS /api/v1/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50064 - "POST /api/v1/documents HTTP/1.1" 200 OK

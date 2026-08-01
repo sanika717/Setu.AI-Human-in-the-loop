@@ -1,0 +1,59 @@
+{
+  "_comment": "System-authored conversation messages, not tied to any specific service - those come from official_service_registry data instead (service_name, description, etc.) and are never translated here. {placeholders} are filled in by services/conversation_manager.py. English is used whenever the resolved language has no entry for a key, so adding a language here is optional, not required, for the conversation layer to keep working.",
+  "messages": {
+    "ask_clarify_intent": {
+      "en": "I couldn't quite understand what you need help with. Could you tell me which service you're trying to use - for example a pension, Aadhaar update, bank KYC, passport, PAN card, or LIC premium payment?",
+      "hi": "मुझे ठीक से समझ नहीं आया कि आपको किस चीज़ में मदद चाहिए। कृपया बताएं - जैसे पेंशन, आधार अपडेट, बैंक केवाईसी, पासपोर्ट, पैन कार्ड, या एलआईसी प्रीमियम भुगतान।",
+      "mr": "तुम्हाला नेमकी कशात मदत हवी आहे हे मला नीट समजले नाही. कृपया सांगा - उदा. पेन्शन, आधार अपडेट, बँक केवायसी, पासपोर्ट, पॅन कार्ड, किंवा एलआयसी प्रीमियम भरणा."
+    },
+    "unsupported_language": {
+      "en": "I don't yet understand this language well enough to help. Please try English, Hindi, Marathi, Bengali, Tamil, or Telugu."
+    },
+    "disambiguation_intro": {
+      "en": "I found a few possible matches. Which one did you mean?",
+      "hi": "मुझे कुछ संभावित विकल्प मिले हैं। आपका मतलब किससे है?",
+      "mr": "मला काही संभाव्य पर्याय सापडले. तुम्हाला यापैकी कोणता हवा आहे?"
+    },
+    "disambiguation_could_not_match": {
+      "en": "I couldn't tell which of these you meant - please reply with the number of your choice, or its name.",
+      "hi": "मैं समझ नहीं पाया कि आपका मतलब इनमें से किससे है - कृपया अपनी पसंद का नंबर या नाम बताएं।"
+    },
+    "disambiguation_gave_up": {
+      "en": "I'll go with the closest match for now so we can continue: {service_name}.",
+      "hi": "अभी के लिए मैं सबसे नज़दीकी विकल्प चुन रहा हूं ताकि हम आगे बढ़ सकें: {service_name}."
+    },
+    "could_not_parse_number": {
+      "en": "Sorry, I didn't catch a number there. Could you tell me again?",
+      "hi": "क्षमा करें, मुझे कोई संख्या समझ नहीं आई। कृपया दोबारा बताएं।"
+    },
+    "could_not_parse_yes_no": {
+      "en": "Sorry, please answer with yes or no.",
+      "hi": "क्षमा करें, कृपया हां या नहीं में उत्तर दें।",
+      "mr": "कृपया होय किंवा नाही असे उत्तर द्या."
+    },
+    "field_skipped_after_retries": {
+      "en": "That's alright, we'll move on without that.",
+      "hi": "कोई बात नहीं, हम इसके बिना आगे बढ़ते हैं।"
+    },
+    "completed_summary": {
+      "en": "Thanks - here's what I found for {service_name}: {eligibility_summary} You'll be guided to the official site at {official_url} next. Sahaay.AI never asks for your password, OTP, or PIN.",
+      "hi": "धन्यवाद - {service_name} के लिए यह जानकारी मिली: {eligibility_summary} अब आपको आधिकारिक वेबसाइट {official_url} पर मार्गदर्शन दिया जाएगा। Sahaay.AI कभी भी आपका पासवर्ड, OTP या पिन नहीं मांगता।"
+    },
+    "completed_no_rules_summary": {
+      "en": "Thanks - {service_name} has no additional eligibility questions to check. You'll be guided to the official site at {official_url} next. Sahaay.AI never asks for your password, OTP, or PIN.",
+      "hi": "धन्यवाद - {service_name} के लिए कोई अतिरिक्त पात्रता प्रश्न नहीं है। अब आपको आधिकारिक वेबसाइट {official_url} पर मार्गदर्शन दिया जाएगा।"
+    },
+    "completed_registry_unavailable": {
+      "en": "Thanks - I've identified {service_name}, but I couldn't reach the service registry just now to finish the eligibility check. Please try again shortly.",
+      "hi": "धन्यवाद - मैंने {service_name} की पहचान कर ली है, लेकिन अभी पात्रता जांच पूरी करने के लिए रजिस्ट्री तक नहीं पहुंच सका। कृपया थोड़ी देर बाद पुनः प्रयास करें।"
+    },
+    "already_completed": {
+      "en": "This conversation has already finished. Please start a new one (omit conversation_id) for a new request.",
+      "hi": "यह बातचीत पहले ही पूरी हो चुकी है। नए अनुरोध के लिए कृपया नई बातचीत शुरू करें (conversation_id न भेजें)।"
+    },
+    "needs_human_help": {
+      "en": "I'm having trouble understanding this request after a few tries. Please contact a Sahaay.AI helper or trusted person for further assistance.",
+      "hi": "कई प्रयासों के बाद भी मुझे यह अनुरोध समझने में कठिनाई हो रही है। कृपया आगे सहायता के लिए Sahaay.AI सहायक या किसी विश्वसनीय व्यक्ति से संपर्क करें।"
+    }
+  }
+}

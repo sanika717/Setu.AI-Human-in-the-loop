@@ -1,0 +1,117 @@
+{
+  "_comment": "Phase C3 Bengali (bn) intent taxonomy for Sahaay.AI's KeywordIntentClassifier. Same intent_id set, labels, and service_category_hint values as data/intents.json (English) - only the keyword phrases and weights are localized.",
+  "language": "bn",
+  "intents": [
+    {
+      "intent_id": "pension_application",
+      "label": "Apply for a pension",
+      "service_category_hint": "pension",
+      "keywords": [
+        {"phrase": "বার্ধক্য পেনশন", "weight": 3},
+        {"phrase": "বিধবা পেনশন", "weight": 3},
+        {"phrase": "প্রতিবন্ধী পেনশন", "weight": 3},
+        {"phrase": "পারিবারিক সুবিধা পেনশন", "weight": 3},
+        {"phrase": "পেনশন", "weight": 2},
+        {"phrase": "এনএসএপি", "weight": 2},
+        {"phrase": "মাসিক ভাতা", "weight": 1},
+        {"phrase": "প্রবীণ নাগরিক সুবিধা", "weight": 1},
+        {"phrase": "পেনশনের জন্য আবেদন", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "identity_document_update",
+      "label": "Update or apply for an identity document",
+      "service_category_hint": "identity",
+      "keywords": [
+        {"phrase": "আধার", "weight": 3},
+        {"phrase": "ঠিকানা আপডেট করুন", "weight": 2},
+        {"phrase": "পাসপোর্ট", "weight": 3},
+        {"phrase": "আমার আধার আপডেট করুন", "weight": 3},
+        {"phrase": "নতুন পাসপোর্ট", "weight": 2},
+        {"phrase": "পাসপোর্ট নবায়ন", "weight": 2},
+        {"phrase": "পরিচয় নথি", "weight": 2},
+        {"phrase": "পরিচয় প্রমাণ", "weight": 1},
+        {"phrase": "বায়োমেট্রিক আপডেট", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "banking_kyc",
+      "label": "Bank account or KYC update",
+      "service_category_hint": "banking",
+      "keywords": [
+        {"phrase": "কেওয়াইসি", "weight": 3},
+        {"phrase": "ব্যাংক অ্যাকাউন্ট", "weight": 2},
+        {"phrase": "এসবিআই", "weight": 2},
+        {"phrase": "আমার কেওয়াইসি আপডেট করুন", "weight": 3},
+        {"phrase": "ব্যাংক পাসবই", "weight": 2},
+        {"phrase": "অ্যাকাউন্ট বিবরণ", "weight": 1},
+        {"phrase": "রি-কেওয়াইসি", "weight": 3},
+        {"phrase": "ব্যাংক শাখা", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "tax_services",
+      "label": "PAN card / tax-related service",
+      "service_category_hint": "tax",
+      "keywords": [
+        {"phrase": "প্যান কার্ড", "weight": 3},
+        {"phrase": "প্যান নম্বর", "weight": 2},
+        {"phrase": "আয়কর", "weight": 2},
+        {"phrase": "কর ফাইলিং", "weight": 2},
+        {"phrase": "প্যানের জন্য আবেদন", "weight": 3},
+        {"phrase": "স্থায়ী অ্যাকাউন্ট নম্বর", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "insurance_services",
+      "label": "Insurance premium or policy service",
+      "service_category_hint": "insurance",
+      "keywords": [
+        {"phrase": "এলআইসি", "weight": 3},
+        {"phrase": "বিমা প্রিমিয়াম", "weight": 3},
+        {"phrase": "পলিসি পেমেন্ট", "weight": 2},
+        {"phrase": "আমার প্রিমিয়াম দিন", "weight": 3},
+        {"phrase": "জীবন বিমা", "weight": 2},
+        {"phrase": "পলিসি নম্বর", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "application_status_check",
+      "label": "Check status of an existing application",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "আমার আবেদনের অবস্থা", "weight": 3},
+        {"phrase": "আবেদনের অবস্থা", "weight": 3},
+        {"phrase": "আমার আবেদন ট্র্যাক করুন", "weight": 2},
+        {"phrase": "আমার আবেদন অনুমোদিত হয়েছে কিনা", "weight": 3},
+        {"phrase": "আমার সাথে কি হয়েছে", "weight": 1},
+        {"phrase": "অবস্থা পরীক্ষা করুন", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "general_help",
+      "label": "General guidance or \"what can you help with\"",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "আপনি কী সাহায্য করতে পারেন", "weight": 3},
+        {"phrase": "এটি কীভাবে কাজ করে", "weight": 2},
+        {"phrase": "আমার সাহায্য দরকার", "weight": 2},
+        {"phrase": "কোন পরিষেবা", "weight": 2},
+        {"phrase": "আমাকে গাইড করুন", "weight": 1},
+        {"phrase": "আমাকে সাহায্য করুন", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "greeting",
+      "label": "Greeting / small talk",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "নমস্কার", "weight": 2},
+        {"phrase": "হ্যালো", "weight": 1},
+        {"phrase": "সুপ্রভাত", "weight": 2},
+        {"phrase": "শুভ অপরাহ্ন", "weight": 2},
+        {"phrase": "ধন্যবাদ", "weight": 1}
+      ]
+    }
+  ]
+}

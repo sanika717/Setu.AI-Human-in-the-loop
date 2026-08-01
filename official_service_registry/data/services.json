@@ -1,0 +1,255 @@
+{
+  "_comment": "Official Service Registry - canonical, config-driven catalog of every government/banking service Sahaay.AI can guide a user through. Adding a new service (Aadhaar, SBI KYC, Passport, PAN, Pension, LIC, etc.) means adding an entry here - no code changes anywhere in the platform are required. Sahaay.AI never hosts its own forms; `official_url` and `allowed_domains` are exactly what the AI Guidance Engine and the Security Shield (Phase D) use to verify and redirect the user to the real, official site.",
+  "services": [
+    {
+      "service_id": "nsap_old_age_pension",
+      "service_name": "National Social Assistance Programme - Old Age Pension",
+      "category": "pension",
+      "description": "Monthly pension for elderly citizens under India's National Social Assistance Programme.",
+      "official_url": "https://nsap.nic.in",
+      "allowed_domains": ["nsap.nic.in"],
+      "required_documents": [
+        "aadhaar",
+        "address_proof",
+        "bank_passbook",
+        "passport_photo",
+        "income_certificate",
+        "age_proof"
+      ],
+      "eligibility_rules": [
+        {
+          "field": "applicant_age",
+          "operator": "gte",
+          "value": 60,
+          "message": "Applicant must be at least 60 years old for the Old Age Pension."
+        }
+      ],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to apply for the Old Age Pension."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify nsap.nic.in is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official NSAP portal - Sahaay.AI never hosts its own form."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather Aadhaar, address proof, bank passbook, photo, income and age proof."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen on the official site; never auto-submit."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews extracted fields before submission."},
+        {"step_id": "otp_submit", "title": "OTP-gated submission", "action_type": "otp_submission", "description": "Final submission is gated behind OTP confirmation by the applicant."}
+      ],
+      "supported_languages": ["en", "hi"]
+    },
+    {
+      "service_id": "nsap_widow_pension",
+      "service_name": "National Social Assistance Programme - Widow Pension",
+      "category": "pension",
+      "description": "Monthly pension for widows under India's National Social Assistance Programme.",
+      "official_url": "https://nsap.nic.in",
+      "allowed_domains": ["nsap.nic.in"],
+      "required_documents": [
+        "aadhaar",
+        "address_proof",
+        "bank_passbook",
+        "passport_photo",
+        "income_certificate",
+        "death_certificate"
+      ],
+      "eligibility_rules": [],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to apply for the Widow Pension."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify nsap.nic.in is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official NSAP portal - Sahaay.AI never hosts its own form."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather Aadhaar, address proof, bank passbook, photo, income proof and the spouse's death certificate."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen on the official site; never auto-submit."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews extracted fields before submission."},
+        {"step_id": "otp_submit", "title": "OTP-gated submission", "action_type": "otp_submission", "description": "Final submission is gated behind OTP confirmation by the applicant."}
+      ],
+      "supported_languages": ["en", "hi"]
+    },
+    {
+      "service_id": "nsap_disability_pension",
+      "service_name": "National Social Assistance Programme - Disability Pension",
+      "category": "pension",
+      "description": "Monthly pension for persons with disabilities under India's National Social Assistance Programme.",
+      "official_url": "https://nsap.nic.in",
+      "allowed_domains": ["nsap.nic.in"],
+      "required_documents": [
+        "aadhaar",
+        "address_proof",
+        "bank_passbook",
+        "passport_photo",
+        "income_certificate",
+        "disability_certificate"
+      ],
+      "eligibility_rules": [],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to apply for the Disability Pension."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify nsap.nic.in is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official NSAP portal - Sahaay.AI never hosts its own form."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather Aadhaar, address proof, bank passbook, photo, income proof and the disability certificate."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen on the official site; never auto-submit."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews extracted fields before submission."},
+        {"step_id": "otp_submit", "title": "OTP-gated submission", "action_type": "otp_submission", "description": "Final submission is gated behind OTP confirmation by the applicant."}
+      ],
+      "supported_languages": ["en", "hi"]
+    },
+    {
+      "service_id": "nsap_family_benefit_pension",
+      "service_name": "National Social Assistance Programme - Family Benefit",
+      "category": "pension",
+      "description": "One-time family benefit under India's National Social Assistance Programme.",
+      "official_url": "https://nsap.nic.in",
+      "allowed_domains": ["nsap.nic.in"],
+      "required_documents": [
+        "aadhaar",
+        "address_proof",
+        "bank_passbook",
+        "passport_photo",
+        "income_certificate",
+        "death_certificate"
+      ],
+      "eligibility_rules": [],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to apply for the Family Benefit."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify nsap.nic.in is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official NSAP portal - Sahaay.AI never hosts its own form."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather Aadhaar, address proof, bank passbook, photo, income proof and the deceased's death certificate."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen on the official site; never auto-submit."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews extracted fields before submission."},
+        {"step_id": "otp_submit", "title": "OTP-gated submission", "action_type": "otp_submission", "description": "Final submission is gated behind OTP confirmation by the applicant."}
+      ],
+      "supported_languages": ["en", "hi"]
+    },
+    {
+      "service_id": "aadhaar_update",
+      "service_name": "Aadhaar Details Update",
+      "category": "identity",
+      "description": "Update name, address, date of birth, or biometrics on an existing Aadhaar record.",
+      "official_url": "https://uidai.gov.in",
+      "allowed_domains": ["uidai.gov.in", "myaadhaar.uidai.gov.in"],
+      "required_documents": [
+        "aadhaar",
+        "address_proof"
+      ],
+      "eligibility_rules": [
+        {
+          "field": "has_existing_aadhaar",
+          "operator": "eq",
+          "value": true,
+          "message": "An existing Aadhaar number is required to request an update."
+        }
+      ],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to update their Aadhaar details."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify uidai.gov.in is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official UIDAI portal - Sahaay.AI never hosts its own form."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather the existing Aadhaar and supporting address proof."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen on the official site; never auto-submit and never request the Aadhaar OTP."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews the update request summary."}
+      ],
+      "supported_languages": ["en", "hi", "ta", "te", "bn"]
+    },
+    {
+      "service_id": "sbi_kyc_update",
+      "service_name": "SBI Bank Account KYC Update",
+      "category": "banking",
+      "description": "Re-KYC / KYC update for a State Bank of India savings or current account.",
+      "official_url": "https://www.onlinesbi.sbi",
+      "allowed_domains": ["onlinesbi.sbi", "sbi.co.in"],
+      "required_documents": [
+        "aadhaar",
+        "pan_card",
+        "address_proof",
+        "passport_photo"
+      ],
+      "eligibility_rules": [
+        {
+          "field": "has_active_account",
+          "operator": "eq",
+          "value": true,
+          "message": "An active SBI account is required to complete a KYC update."
+        }
+      ],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to update KYC on their SBI account."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify onlinesbi.sbi is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official SBI portal - Sahaay.AI never hosts its own form and never asks for net-banking credentials, OTP, or PIN."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather Aadhaar, PAN, address proof, and photo."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen on the official site; never auto-submit."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews the KYC update summary."}
+      ],
+      "supported_languages": ["en", "hi"]
+    },
+    {
+      "service_id": "passport_application",
+      "service_name": "Passport Application (Fresh/Reissue)",
+      "category": "identity",
+      "description": "Apply for a new Indian passport or reissue an expiring/expired one.",
+      "official_url": "https://www.passportindia.gov.in",
+      "allowed_domains": ["passportindia.gov.in"],
+      "required_documents": [
+        "aadhaar",
+        "address_proof",
+        "age_proof",
+        "passport_photo"
+      ],
+      "eligibility_rules": [],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm whether this is a fresh passport application or a reissue."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify passportindia.gov.in is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official Passport Seva portal - Sahaay.AI never hosts its own form."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather Aadhaar, address proof, age proof, and photo."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant through the online form and appointment booking; never auto-submit."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews the application summary before the applicant confirms their appointment."}
+      ],
+      "supported_languages": ["en", "hi"]
+    },
+    {
+      "service_id": "pan_card_application",
+      "service_name": "PAN Card Application",
+      "category": "tax",
+      "description": "Apply for a new Permanent Account Number (PAN) card.",
+      "official_url": "https://www.incometax.gov.in",
+      "allowed_domains": ["incometax.gov.in", "tin-nsdl.com", "protean-tinpan.com"],
+      "required_documents": [
+        "aadhaar",
+        "address_proof",
+        "passport_photo"
+      ],
+      "eligibility_rules": [],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to apply for a new PAN card."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify the official Income Tax / Protean e-Gov domain is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official PAN application portal - Sahaay.AI never hosts its own form."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather Aadhaar, address proof, and photo."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen through the online PAN form; never auto-submit."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker reviews the application summary."}
+      ],
+      "supported_languages": ["en", "hi"]
+    },
+    {
+      "service_id": "lic_premium_payment",
+      "service_name": "LIC Policy Premium Payment",
+      "category": "insurance",
+      "description": "Pay a due premium on an existing LIC (Life Insurance Corporation of India) policy.",
+      "official_url": "https://www.licindia.in",
+      "allowed_domains": ["licindia.in"],
+      "required_documents": [
+        "policy_document"
+      ],
+      "eligibility_rules": [
+        {
+          "field": "has_active_policy",
+          "operator": "eq",
+          "value": true,
+          "message": "An active LIC policy number is required to pay a premium."
+        }
+      ],
+      "workflow_steps": [
+        {"step_id": "detect_intent", "title": "Confirm requested service", "action_type": "intent_confirmation", "description": "Confirm the applicant wants to pay a premium on an existing LIC policy."},
+        {"step_id": "verify_official_site", "title": "Verify official website", "action_type": "official_site_verification", "description": "Verify licindia.in is reachable over HTTPS and matches the allowed domain list."},
+        {"step_id": "redirect", "title": "Redirect to official website", "action_type": "redirect_official_site", "description": "Open the official LIC portal - Sahaay.AI never hosts its own form and never asks for card/CVV details."},
+        {"step_id": "collect_documents", "title": "Collect required documents", "action_type": "collect_documents", "description": "Gather the policy document/number."},
+        {"step_id": "ai_guidance", "title": "AI step-by-step guidance", "action_type": "ai_guidance", "description": "Guide the applicant screen-by-screen through the payment flow; never auto-submit and never request card/CVV/OTP directly."},
+        {"step_id": "human_review", "title": "Human review & approval", "action_type": "human_review", "description": "A caseworker or trusted person reviews the payment summary before confirmation."}
+      ],
+      "supported_languages": ["en", "hi", "mr"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+INFO:     Will watch for changes in these directories: ['/Users/sanik/Downloads/sahaay/intent_service']
+INFO:     Uvicorn running on http://127.0.0.1:8006 (Press CTRL+C to quit)
+INFO:     Started reloader process [33001] using WatchFiles
+INFO:     Started server process [33050]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:50030 - "POST /api/v1/conversation/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50056 - "POST /api/v1/conversation/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /api/v1/conversation/message HTTP/1.1" 200 OK

@@ -1,0 +1,117 @@
+{
+  "_comment": "Phase C3 Marathi (mr) intent taxonomy for Sahaay.AI's KeywordIntentClassifier. Same intent_id set, labels, and service_category_hint values as data/intents.json (English) - only the keyword phrases and weights are localized. Kept as a separate file from intents_hi.json (rather than merged) because Marathi and Hindi share the Devanagari script but not vocabulary - see providers/language_detector.py's Marathi-marker disambiguation for why the two need distinct taxonomies rather than one shared Devanagari one.",
+  "language": "mr",
+  "intents": [
+    {
+      "intent_id": "pension_application",
+      "label": "Apply for a pension",
+      "service_category_hint": "pension",
+      "keywords": [
+        {"phrase": "वृद्धापकाळ निवृत्तीवेतन", "weight": 3},
+        {"phrase": "विधवा निवृत्तीवेतन", "weight": 3},
+        {"phrase": "अपंगत्व निवृत्तीवेतन", "weight": 3},
+        {"phrase": "कौटुंबिक लाभ निवृत्तीवेतन", "weight": 3},
+        {"phrase": "निवृत्तीवेतन", "weight": 2},
+        {"phrase": "एनएसएपी", "weight": 2},
+        {"phrase": "मासिक भत्ता", "weight": 1},
+        {"phrase": "ज्येष्ठ नागरिक लाभ", "weight": 1},
+        {"phrase": "निवृत्तीवेतनासाठी अर्ज", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "identity_document_update",
+      "label": "Update or apply for an identity document",
+      "service_category_hint": "identity",
+      "keywords": [
+        {"phrase": "आधार", "weight": 3},
+        {"phrase": "पत्ता अद्ययावत करा", "weight": 2},
+        {"phrase": "पासपोर्ट", "weight": 3},
+        {"phrase": "माझे आधार अद्ययावत करा", "weight": 3},
+        {"phrase": "नवीन पासपोर्ट", "weight": 2},
+        {"phrase": "पासपोर्ट नूतनीकरण", "weight": 2},
+        {"phrase": "ओळख दस्तऐवज", "weight": 2},
+        {"phrase": "ओळखपत्र पुरावा", "weight": 1},
+        {"phrase": "बायोमेट्रिक अद्ययावत", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "banking_kyc",
+      "label": "Bank account or KYC update",
+      "service_category_hint": "banking",
+      "keywords": [
+        {"phrase": "केवायसी", "weight": 3},
+        {"phrase": "बँक खाते", "weight": 2},
+        {"phrase": "एसबीआय", "weight": 2},
+        {"phrase": "माझे केवायसी अद्ययावत करा", "weight": 3},
+        {"phrase": "बँक पासबुक", "weight": 2},
+        {"phrase": "खाते तपशील", "weight": 1},
+        {"phrase": "री-केवायसी", "weight": 3},
+        {"phrase": "बँक शाखा", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "tax_services",
+      "label": "PAN card / tax-related service",
+      "service_category_hint": "tax",
+      "keywords": [
+        {"phrase": "पॅन कार्ड", "weight": 3},
+        {"phrase": "पॅन क्रमांक", "weight": 2},
+        {"phrase": "आयकर", "weight": 2},
+        {"phrase": "कर भरणा", "weight": 2},
+        {"phrase": "पॅनसाठी अर्ज", "weight": 3},
+        {"phrase": "कायम खाते क्रमांक", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "insurance_services",
+      "label": "Insurance premium or policy service",
+      "service_category_hint": "insurance",
+      "keywords": [
+        {"phrase": "एलआयसी", "weight": 3},
+        {"phrase": "विमा हप्ता", "weight": 3},
+        {"phrase": "पॉलिसी देयक", "weight": 2},
+        {"phrase": "माझा हप्ता भरा", "weight": 3},
+        {"phrase": "जीवन विमा", "weight": 2},
+        {"phrase": "पॉलिसी क्रमांक", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "application_status_check",
+      "label": "Check status of an existing application",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "माझ्या अर्जाची स्थिती", "weight": 3},
+        {"phrase": "अर्जाची स्थिती", "weight": 3},
+        {"phrase": "माझा अर्ज ट्रॅक करा", "weight": 2},
+        {"phrase": "माझा अर्ज मंजूर झाला आहे का", "weight": 3},
+        {"phrase": "माझ्यासोबत काय झाले", "weight": 1},
+        {"phrase": "स्थिती तपासा", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "general_help",
+      "label": "General guidance or \"what can you help with\"",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "तुम्ही काय मदत करू शकता", "weight": 3},
+        {"phrase": "हे कसे कार्य करते", "weight": 2},
+        {"phrase": "मला मदत हवी आहे", "weight": 2},
+        {"phrase": "कोणत्या सेवा", "weight": 2},
+        {"phrase": "मला मार्गदर्शन करा", "weight": 1},
+        {"phrase": "मला मदत करा", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "greeting",
+      "label": "Greeting / small talk",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "नमस्कार", "weight": 2},
+        {"phrase": "नमस्ते", "weight": 2},
+        {"phrase": "सुप्रभात", "weight": 2},
+        {"phrase": "शुभ दुपार", "weight": 2},
+        {"phrase": "धन्यवाद", "weight": 1}
+      ]
+    }
+  ]
+}

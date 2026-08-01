@@ -1,0 +1,752 @@
+:root {
+  --bg: #f2f7ff;
+  --surface: #ffffff;
+  --primary: #1f4eda;
+  --primary-soft: #dbe3ff;
+  --text: #102a43;
+  --muted: #5d6d7e;
+  --border: #d8e2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #eef4ff 0%, #f2f7ff 60%, #f8fbff 100%);
+  color: var(--text);
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 32px auto;
+}
+
+header {
+  padding: 28px 24px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 40px rgba(16, 42, 67, 0.08);
+}
+
+header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  margin-top: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+input,
+textarea,
+select,
+button {
+  width: 100%;
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #f9fbff;
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  color: white;
+  background: var(--primary);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #163fcc;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+button.is-loading {
+  position: relative;
+  color: transparent;
+}
+
+button.is-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+}
+
+.secondary-btn.is-loading::after {
+  border-color: rgba(31, 78, 218, 0.35);
+  border-top-color: var(--primary);
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hash-output,
+.result,
+.portal-list {
+  margin: 18px 0;
+}
+
+.result {
+  padding: 16px;
+  background: #f8fbff;
+  border: 1px solid #d9e2f5;
+  border-radius: 14px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.portal-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+  background: #ffffff;
+}
+
+.portal-card button {
+  width: auto;
+  padding: 12px 18px;
+}
+
+@media (max-width: 720px) {
+  .portal-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 18px;
+}
+
+@media (max-width: 720px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reference-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f9fbff;
+  border: 1px solid var(--border);
+}
+
+.reference-loading,
+.reference-error {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.reference-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.reference-group-label {
+  font-weight: 600;
+  color: var(--text);
+  margin-right: 4px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.82rem;
+}
+
+.doc-rows {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.doc-row {
+  position: relative;
+  padding: 16px;
+  padding-top: 40px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #f9fbff;
+  display: grid;
+  gap: 14px;
+}
+
+.doc-row-header {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc-row-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doc-row .use-upload-btn {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+
+.doc-row-title {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.doc-row .remove-doc-btn {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  background: #fdeceb;
+  color: #b3261e;
+}
+
+.doc-row .remove-doc-btn:hover {
+  background: #fbdad8;
+}
+
+.doc-row label {
+  margin-bottom: 0;
+}
+
+.metadata-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .metadata-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.row-actions {
+  margin: 4px 0 20px;
+}
+
+.secondary-btn {
+  width: auto;
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 10px 16px;
+}
+
+.secondary-btn:hover {
+  background: #c7d4ff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.badge-valid,
+.badge-success {
+  background: #e3f6ea;
+  color: #1e7a41;
+}
+
+.badge-invalid,
+.badge-error {
+  background: #fdeceb;
+  color: #b3261e;
+}
+
+.badge-manual_review,
+.badge-warning {
+  background: #fff4de;
+  color: #96660c;
+}
+
+.result-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.result-heading strong {
+  color: var(--text);
+}
+
+.issues-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.issues-list li {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.doc-result-card {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  margin-bottom: 12px;
+}
+
+.doc-result-card:last-child {
+  margin-bottom: 0;
+}
+
+.field-card {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  margin-bottom: 12px;
+  display: grid;
+  gap: 4px;
+}
+
+.field-card:last-child {
+  margin-bottom: 0;
+}
+
+.field-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.field-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.field-value {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.field-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* --- Phase 4: Human Review & Governance --------------------------------- */
+
+.badge-draft,
+.badge-pending {
+  background: #eef1f6;
+  color: var(--muted);
+}
+
+.badge-under_review {
+  background: #fff4de;
+  color: #96660c;
+}
+
+.badge-validation_failed,
+.badge-rejected {
+  background: #fdeceb;
+  color: #b3261e;
+}
+
+.badge-ready_for_submission,
+.badge-approved {
+  background: #e3f6ea;
+  color: #1e7a41;
+}
+
+.badge-submitted {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.governance-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.governance-toolbar .secondary-btn {
+  width: auto;
+}
+
+.governance-load-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.governance-load-label {
+  margin-bottom: 0;
+}
+
+.governance-load-row input {
+  min-width: 220px;
+}
+
+.governance-load-row button {
+  width: auto;
+}
+
+.governance-panel {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.governance-subsection {
+  margin-top: 20px;
+}
+
+.governance-subsection h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.governance-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.governance-btn-row button,
+.governance-btn-row select {
+  width: auto;
+}
+
+.gov-fields-list {
+  display: grid;
+  gap: 12px;
+}
+
+.gov-field-card {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  display: grid;
+  gap: 10px;
+}
+
+.gov-field-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.gov-field-actions button {
+  width: auto;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.gov-field-actions .gov-approve-btn {
+  background: #1e7a41;
+}
+
+.gov-field-actions .gov-approve-btn:hover {
+  background: #17612f;
+}
+
+.gov-field-actions .gov-reject-btn {
+  background: #b3261e;
+}
+
+.gov-field-actions .gov-reject-btn:hover {
+  background: #941f18;
+}
+
+.gov-field-actions input {
+  width: auto;
+  flex: 1;
+  min-width: 160px;
+  padding: 8px 12px;
+}
+
+.gov-field-decided {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.gov-audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.gov-audit-table th,
+.gov-audit-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.gov-audit-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .governance-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .governance-load-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Phase D Security Shield - risk-blocked redirect panel               */
+/* ------------------------------------------------------------------ */
+
+.risk-blocked {
+  background: #fdeceb;
+  border: 1px solid #f3b8b3;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #7a1f18;
+}
+
+.risk-blocked strong {
+  font-size: 1rem;
+}
+
+.risk-blocked ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.risk-blocked-note {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #96342c;
+}
+
+/* ------------------------------------------------------------------ */
+/* Phase F Trusted Delegate panel                                      */
+/* ------------------------------------------------------------------ */
+
+.section-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: -4px;
+}
+
+.delegate-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.delegate-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.delegate-status-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Section 3: Ask Sahaay.AI (Phase D conversational guidance)          */
+/* ------------------------------------------------------------------ */
+
+.conversation-window {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  background: var(--bg);
+  margin-bottom: 12px;
+}
+
+.conversation-placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.conversation-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.conversation-bubble-citizen {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.conversation-bubble-sahaay {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+
+.conversation-candidates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.candidate-chip {
+  border: 1px solid var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.candidate-chip:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.conversation-form {
+  display: flex;
+  gap: 10px;
+}
+
+.conversation-form input {
+  flex: 1;
+}
+
+.conversation-form button {
+  width: auto;
+  padding: 14px 20px;
+}
+
+.conversation-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.conversation-resolved {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--bg);
+}
+
+.conversation-resolved strong {
+  color: var(--text);
+}

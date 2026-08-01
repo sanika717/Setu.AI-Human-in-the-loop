@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAHAAY.AI — Secure AI Banking Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="app-ui.css" />
+  <link rel="stylesheet" href="assist.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ============================== Sidebar ============================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="#1f4eda"/>
+            <path d="M24 8 L38 15 V24 C38 33 32 39 24 41 C16 39 10 33 10 24 V15 Z" fill="#ffffff" opacity="0.95"/>
+            <path d="M17 24.5 L22 29.5 L32 18" stroke="#1f4eda" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>SAHAAY.AI</strong>
+          <small data-i18n="tagline">Secure AI Banking Assistant</small>
+        </span>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebar-nav" aria-label="Main navigation">
+        <button type="button" class="nav-item" data-page="dashboard">
+          <span class="nav-icon" aria-hidden="true">⌂</span><span data-i18n="nav.dashboard">Dashboard</span>
+        </button>
+        <button type="button" class="nav-item" data-page="chat">
+          <span class="nav-icon" aria-hidden="true">💬</span><span data-i18n="nav.chat">Chat</span>
+        </button>
+        <button type="button" class="nav-item" data-page="upload">
+          <span class="nav-icon" aria-hidden="true">⇪</span><span data-i18n="nav.upload">Upload</span>
+        </button>
+        <div class="nav-group" data-group="applications">
+          <button type="button" class="nav-item nav-group-toggle" data-page="validate">
+            <span class="nav-icon" aria-hidden="true">▤</span><span data-i18n="nav.applications">Applications</span>
+            <span class="nav-caret" aria-hidden="true">›</span>
+          </button>
+          <div class="nav-subitems">
+            <button type="button" class="nav-subitem" data-page="validate" data-i18n="nav.validate">Validation</button>
+            <button type="button" class="nav-subitem" data-page="extract" data-i18n="nav.extract">AI Extraction</button>
+            <button type="button" class="nav-subitem" data-page="review" data-i18n="nav.review">Human Review</button>
+            <button type="button" class="nav-subitem" data-page="portal" data-i18n="nav.portal">Official Portal</button>
+            <button type="button" class="nav-subitem" data-page="status" data-i18n="nav.status">Application Status</button>
+          </div>
+        </div>
+        <button type="button" class="nav-item" data-page="support">
+          <span class="nav-icon" aria-hidden="true">🎧</span><span data-i18n="nav.support">Support Dashboard</span>
+        </button>
+        <button type="button" class="nav-item" data-page="settings">
+          <span class="nav-icon" aria-hidden="true">⚙</span><span data-i18n="nav.settings">Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span data-i18n="sidebar.footer">Every action here is logged, reversible, and reviewed by a human before anything is submitted.</span>
+      </div>
+    </aside>
+
+    <!-- Mobile overlay, click to close sidebar on small screens -->
+    <div class="sidebar-scrim" id="sidebar-scrim" hidden></div>
+
+    <!-- ============================== Main area ============================== -->
+    <div class="main-area">
+      <header class="topbar">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">☰</button>
+        <div class="topbar-title">
+          <h1 id="page-title" data-i18n="pageTitle.dashboard">Dashboard</h1>
+          <p id="page-subtitle" data-i18n="pageSubtitle.dashboard">Welcome back — here's where you left off.</p>
+        </div>
+        <div class="topbar-actions">
+          <button type="button" class="need-help-btn" id="need-help-btn" hidden>
+            <span aria-hidden="true">🆘</span>
+            <span>Need Help</span>
+          </button>
+          <button type="button" class="take-control-toggle" id="take-control-toggle" aria-pressed="false">
+            <span aria-hidden="true">🧭</span>
+            <span data-i18n="takeControl.toggle">Take Control</span>
+          </button>
+          <label class="language-select-wrap">
+            <span class="sr-only">Language</span>
+            <select id="language-select" aria-label="Choose language">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="mr">मराठी</option>
+              <option value="ta">தமிழ்</option>
+              <option value="te">తెలుగు</option>
+              <option value="kn">ಕನ್ನಡ</option>
+              <option value="bn">বাংলা</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <div class="workflow-stepper" id="workflow-stepper" aria-label="Application workflow progress">
+        <div class="step" data-step="upload"><span class="step-dot">1</span><span class="step-label" data-i18n="step.upload">Upload</span></div>
+        <div class="step" data-step="validate"><span class="step-dot">2</span><span class="step-label" data-i18n="step.validate">Validation</span></div>
+        <div class="step" data-step="extract"><span class="step-dot">3</span><span class="step-label" data-i18n="step.extract">Extraction</span></div>
+        <div class="step" data-step="review"><span class="step-dot">4</span><span class="step-label" data-i18n="step.review">Human Review</span></div>
+        <div class="step" data-step="portal"><span class="step-dot">5</span><span class="step-label" data-i18n="step.portal">Official Portal</span></div>
+        <div class="step" data-step="completed"><span class="step-dot">✓</span><span class="step-label" data-i18n="step.completed">Completed</span></div>
+      </div>
+
+      <main class="content" id="content">
+
+        <!-- ===================== Dashboard (landing page) ===================== -->
+        <section class="page is-active" id="page-dashboard" data-page="dashboard">
+          <div class="dashboard-chat-hero">
+            <div class="hero-avatar" aria-hidden="true">🤖</div>
+            <h2 data-i18n="dashboard.greeting">Hello! What would you like to do today?</h2>
+            <p data-i18n="dashboard.greetingSub">Ask me in your own words, or use the shortcuts below — I'll guide you the rest of the way.</p>
+            <form id="dashboard-chat-form" class="dashboard-chat-form">
+              <input type="text" id="dashboard-chat-input" data-i18n-placeholder="dashboard.chatPlaceholder"
+                     placeholder="e.g. I want to apply for an old age pension" autocomplete="off" />
+              <button type="submit" data-i18n="dashboard.chatSend">Ask Sahaay.AI</button>
+            </form>
+            <div class="dashboard-suggested-prompts" id="dashboard-suggested-prompts"></div>
+          </div>
+
+          <div class="dashboard-cards">
+            <button type="button" class="dashboard-card" id="card-continue">
+              <span class="dashboard-card-icon" aria-hidden="true">⟳</span>
+              <span class="dashboard-card-title" data-i18n="dashboard.continue">Continue Application</span>
+              <span class="dashboard-card-desc" id="card-continue-desc" data-i18n="dashboard.continueDesc">Pick up your most recent application where you left off.</span>
+            </button>
+            <button type="button" class="dashboard-card" id="card-track">
+              <span class="dashboard-card-icon" aria-hidden="true">◎</span>
+              <span class="dashboard-card-title" data-i18n="dashboard.track">Track Application</span>
+              <span class="dashboard-card-desc" data-i18n="dashboard.trackDesc">Check the status, audit log, and reports for any application.</span>
+            </button>
+            <button type="button" class="dashboard-card" id="card-new">
+              <span class="dashboard-card-icon" aria-hidden="true">＋</span>
+              <span class="dashboard-card-title" data-i18n="dashboard.newApp">Start a New Request</span>
+              <span class="dashboard-card-desc" data-i18n="dashboard.newAppDesc">Upload a document or ask Sahaay.AI to begin.</span>
+            </button>
+          </div>
+
+          <div class="dashboard-recent">
+            <h3 data-i18n="dashboard.recent">Recent Applications</h3>
+            <div id="dashboard-recent-list" class="dashboard-recent-list">
+              <p class="dashboard-recent-empty" data-i18n="dashboard.recentEmpty">No applications yet — start a conversation or load one by ID from Application Status.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== AI Chat ===================== -->
+        <section class="page" id="page-chat" data-page="chat">
+          <div class="card chat-card">
+            <p data-i18n="chat.intro">
+              Describe what you need in your own words — e.g. "I want to apply for an old age pension" —
+              and Sahaay.AI will work out the right official service, ask any follow-up questions it
+              needs, and hand you off to the guided portal once it knows enough.
+            </p>
+            <div class="chat-suggested-prompts" id="chat-suggested-prompts"></div>
+            <div id="conversation-window" class="conversation-window">
+              <div class="conversation-placeholder" data-i18n="chat.placeholder">Say hello, or describe what you need help with, to get started.</div>
+            </div>
+            <div id="conversation-typing" class="conversation-typing" hidden>
+              <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+            </div>
+            <div id="conversation-candidates" class="conversation-candidates" hidden></div>
+            <form id="conversation-form" class="conversation-form">
+              <button type="button" id="voice-input-btn" class="chat-icon-btn" title="Voice input" aria-label="Voice input">🎤</button>
+              <button type="button" id="chat-file-btn" class="chat-icon-btn" title="Attach a document" aria-label="Attach a document">📎</button>
+              <input type="text" id="conversation-input" data-i18n-placeholder="chat.inputPlaceholder" placeholder="Type your message..." autocomplete="off" required />
+              <button type="submit" id="conversation-send-btn" data-i18n="chat.send">Send</button>
+            </form>
+            <div class="conversation-actions">
+              <button type="button" id="conversation-reset-btn" class="secondary-btn" data-i18n="chat.startOver">Start Over</button>
+              <span id="conversation-id-display" class="field-meta"></span>
+            </div>
+            <div id="conversation-result" class="result"></div>
+          </div>
+        </section>
+
+        <!-- ===================== Document Upload ===================== -->
+        <section class="page" id="page-upload" data-page="upload">
+          <div class="card">
+            <p data-i18n="upload.intro">
+              Select a file, review its SHA-256 hash, and store it securely. Text files can then be pulled
+              straight into Validation and Extraction with their "Use last upload" button — no copy/paste
+              needed. Scanned or image documents still need their text pasted in manually until an OCR
+              provider is connected.
+            </p>
+            <form id="upload-form">
+              <label data-i18n="upload.titleLabel">Title<input type="text" id="doc-title" placeholder="Document title" required /></label>
+              <label data-i18n="upload.sourceLabel">Source<input type="text" id="doc-source" placeholder="Source/portal" /></label>
+              <label data-i18n="upload.fileLabel">File<input type="file" id="doc-file" accept=".txt,.pdf,.doc,.docx" required /></label>
+              <div class="hash-output">
+                <strong data-i18n="upload.hashLabel">Computed hash:</strong>
+                <span id="file-hash" data-i18n="upload.noFile">No file selected</span>
+              </div>
+              <button type="submit" data-i18n="upload.submit">Upload Document</button>
+            </form>
+            <div id="upload-result" class="result"></div>
+          </div>
+        </section>
+
+        <!-- ===================== Document Validation ===================== -->
+        <section class="page" id="page-validate" data-page="validate">
+          <div class="card">
+            <p data-i18n="validate.intro">Validate applicant documents against Sahaay.AI's document catalog before they are sent for AI extraction.</p>
+            <div class="reference-panel" id="reference-panel">
+              <span class="reference-loading" data-i18n="validate.loadingRef">Loading supported document types &amp; official services...</span>
+            </div>
+            <form id="validation-form">
+              <div class="form-row">
+                <label data-i18n="validate.applicantId">Applicant ID<input type="text" id="validation-applicant-id" placeholder="APP-1001" required /></label>
+                <label data-i18n="validate.service">Service
+                  <select id="validation-service-id">
+                    <option value="" data-i18n="validate.serviceOptional">-- Select a service (optional) --</option>
+                  </select>
+                </label>
+                <label data-i18n="validate.applicantAge">Applicant Age<input type="number" id="validation-applicant-age" min="0" max="150" placeholder="62" /></label>
+              </div>
+              <datalist id="document-type-options"></datalist>
+
+              <div id="validation-doc-rows" class="doc-rows"></div>
+              <div class="row-actions">
+                <button type="button" id="add-validation-doc" class="secondary-btn" data-i18n="validate.addDoc">+ Add Document</button>
+              </div>
+
+              <button type="submit" data-i18n="validate.submit">Validate Documents</button>
+            </form>
+            <div id="validation-result" class="result"></div>
+          </div>
+        </section>
+
+        <!-- ===================== AI Extraction ===================== -->
+        <section class="page" id="page-extract" data-page="extract">
+          <div class="card">
+            <p data-i18n="extract.intro">Send validated documents to the AI Guidance Engine and review each extracted field with its confidence and source.</p>
+            <form id="extract-form">
+              <label data-i18n="extract.applicantId">Applicant ID<input type="text" id="extract-applicant-id" placeholder="APP-1001" required /></label>
+
+              <div id="extraction-doc-rows" class="doc-rows"></div>
+              <div class="row-actions">
+                <button type="button" id="add-extraction-doc" class="secondary-btn" data-i18n="extract.addDoc">+ Add Document</button>
+              </div>
+
+              <button type="submit" data-i18n="extract.submit">Run Extraction</button>
+            </form>
+            <div id="extract-result" class="result"></div>
+          </div>
+        </section>
+
+        <!-- ===================== Human Review & Governance ===================== -->
+        <section class="page" id="page-review" data-page="review">
+          <div class="card">
+            <p data-i18n="review.intro">
+              Send an extraction result to the Trust &amp; Governance Engine, then approve, reject, or edit
+              each field as a caseworker. Once every field has a decision, verify an OTP (and any Trusted
+              Delegate approval) and submit the application — every action is written to an immutable audit log.
+            </p>
+
+            <label data-i18n="review.actorLabel">Caseworker ID (used as "actor" on every decision below)
+              <input type="text" id="gov-actor-id" value="caseworker:web" placeholder="caseworker:asha" />
+            </label>
+
+            <div class="governance-toolbar">
+              <button type="button" id="gov-send-extraction-btn" class="secondary-btn" disabled data-i18n="review.sendExtraction">
+                Send last extraction to Governance
+              </button>
+              <div class="governance-load-row">
+                <label class="governance-load-label" data-i18n="review.loadExisting">Or load an existing application
+                  <input type="text" id="gov-load-application-id" placeholder="application UUID" />
+                </label>
+                <button type="button" id="gov-load-application-btn" class="secondary-btn" data-i18n="review.load">Load</button>
+              </div>
+            </div>
+            <div id="gov-intake-result" class="result"></div>
+
+            <div id="gov-application-panel" class="governance-panel" hidden>
+              <div class="result-heading">
+                <strong data-i18n="review.applicationLabel">Application <span id="gov-app-id"></span></strong>
+                <span id="gov-app-status" class="badge"></span>
+                <button type="button" id="gov-refresh-btn" class="secondary-btn" data-i18n="review.refresh">Refresh</button>
+              </div>
+
+              <!-- Human Governance is only surfaced as a plain form when nothing
+                   sensitive is involved. When sensitive fields (Aadhaar/PAN/bank
+                   details, etc.) are detected in the loaded application, this
+                   consent gate is shown instead, and the review form beneath it
+                   stays hidden until the citizen explicitly agrees. -->
+              <div class="governance-consent-gate" id="governance-consent-gate" hidden>
+                <div class="governance-consent-icon" aria-hidden="true">🔒</div>
+                <h3 data-i18n="govGate.heading">Sensitive information detected</h3>
+                <p id="governance-consent-fields" class="governance-consent-fields"></p>
+                <p class="governance-consent-question" data-i18n="govGate.question">Would you like AI to process this information?</p>
+                <ul class="governance-consent-facts">
+                  <li data-i18n="govGate.encryption">🔐 Encrypted in transit and at rest</li>
+                  <li data-i18n="govGate.audit">📜 Every action is written to the immutable audit log</li>
+                  <li data-i18n="govGate.permission">✅ Nothing proceeds without your explicit permission</li>
+                </ul>
+                <div class="modal-actions">
+                  <button type="button" id="governance-consent-decline" class="secondary-btn" data-i18n="govGate.decline">Not now</button>
+                  <button type="button" id="governance-consent-accept" data-i18n="govGate.accept">Yes, proceed</button>
+                </div>
+              </div>
+
+              <div id="gov-review-body" class="gov-review-body">
+                <div id="gov-fields-list" class="gov-fields-list"></div>
+
+              <div class="governance-subsection">
+                <h3 data-i18n="review.otpHeading">OTP &amp; Submission</h3>
+                <div class="form-row">
+                  <label data-i18n="review.otpDest">OTP destination (phone/e-mail)<input type="text" id="gov-otp-destination" placeholder="+91XXXXXXXXXX" /></label>
+                  <label data-i18n="review.otpCode">OTP code<input type="text" id="gov-otp-code" placeholder="6-digit code" /></label>
+                </div>
+                <div class="governance-btn-row">
+                  <button type="button" id="gov-request-otp-btn" class="secondary-btn" data-i18n="review.requestOtp">Request OTP</button>
+                  <button type="button" id="gov-verify-otp-btn" class="secondary-btn" data-i18n="review.verifyOtp">Verify OTP</button>
+                  <button type="button" id="gov-validate-btn" class="secondary-btn" data-i18n="review.checkReadiness">Check Submission Readiness</button>
+                  <button type="button" id="gov-submit-btn" data-i18n="review.submitApp">Submit Application</button>
+                </div>
+                <div id="gov-otp-result" class="result"></div>
+              </div>
+
+              <div class="governance-subsection">
+                <h3 data-i18n="review.auditHeading">Audit Log &amp; Reports</h3>
+                <div class="governance-btn-row">
+                  <button type="button" id="gov-audit-log-btn" class="secondary-btn" data-i18n="review.loadAudit">Load Audit Log</button>
+                  <button type="button" id="gov-verify-chain-btn" class="secondary-btn" data-i18n="review.verifyChain">Verify Audit Chain</button>
+                  <select id="gov-report-format">
+                    <option value="json">JSON</option>
+                    <option value="csv">CSV</option>
+                    <option value="pdf">PDF</option>
+                  </select>
+                  <button type="button" id="gov-download-report-btn" class="secondary-btn" data-i18n="review.downloadReport">Download Report</button>
+                </div>
+                <div id="gov-audit-result" class="result"></div>
+              </div>
+
+              <div class="governance-subsection">
+                <h3 data-i18n="review.delegateHeading">Trusted Delegate (Human-in-the-Loop)</h3>
+                <p class="section-hint" data-i18n="review.delegateHint">
+                  A Trusted Delegate (family member, caregiver, or NGO volunteer) can be asked to approve this
+                  application before it is submitted. When "approval required" is checked, submission stays
+                  blocked until they approve.
+                </p>
+                <div id="delegate-panel" class="delegate-panel">
+                  <div class="form-row">
+                    <label data-i18n="review.delegateName">Delegate name<input type="text" id="delegate-name" placeholder="Sunita Devi" /></label>
+                    <label data-i18n="review.delegateRelationship">Relationship<input type="text" id="delegate-relationship" placeholder="daughter" /></label>
+                    <label data-i18n="review.delegateContact">Contact<input type="text" id="delegate-contact" placeholder="+91XXXXXXXXXX or email" /></label>
+                  </div>
+                  <div class="form-row">
+                    <label class="delegate-checkbox-label">
+                      <input type="checkbox" id="delegate-approval-required" checked />
+                      <span data-i18n="review.delegateApprovalRequired">Approval required before submission</span>
+                    </label>
+                    <label data-i18n="review.delegateRegisteredBy">Registered by<input type="text" id="delegate-consent-by" placeholder="applicant:APP-1001" /></label>
+                  </div>
+                  <div class="governance-btn-row">
+                    <button type="button" id="delegate-register-btn" class="secondary-btn" data-i18n="review.delegateRegister">Register Delegate</button>
+                    <button type="button" id="delegate-load-btn" class="secondary-btn" data-i18n="review.delegateLoad">Load Current Delegate</button>
+                    <button type="button" id="delegate-approve-btn" class="secondary-btn" data-i18n="review.delegateApprove">Approve (as delegate)</button>
+                    <button type="button" id="delegate-revoke-btn" class="secondary-btn" data-i18n="review.delegateRevoke">Revoke Delegate</button>
+                  </div>
+                  <div id="delegate-status-card" class="delegate-status-card" hidden></div>
+                  <div id="delegate-result" class="result"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== Official Portal Guidance ===================== -->
+        <section class="page" id="page-portal" data-page="portal">
+          <div class="card">
+            <p data-i18n="portal.intro">
+              This guide acts as a layer above government banking portals and asks for your permission
+              before every redirect. Sahaay.AI's Security Shield checks every redirect first — if
+              something doesn't check out, the redirect is paused and shown below instead of opening.
+            </p>
+            <div class="portal-assistant-note">
+              <span aria-hidden="true">🤖</span>
+              <span data-i18n="portal.assistantNote">Sahaay.AI stays with you here — after you confirm, you'll get a security check, a plain-language explanation of what happens next, and only then the official site opens in a new tab.</span>
+            </div>
+            <label data-i18n="portal.noteLabel">Permission note<input type="text" id="portal-note" placeholder="Optional note to store with confirmation" /></label>
+            <label data-i18n="portal.apiKeyLabel">Portal API key<input type="password" id="portal-api-key" placeholder="Optional API key for portal access" /></label>
+            <div class="portal-list" id="portal-list"></div>
+            <div id="portal-feedback" class="result"></div>
+          </div>
+        </section>
+
+        <!-- ===================== Application Status (new) ===================== -->
+        <section class="page" id="page-status" data-page="status">
+          <div class="card">
+            <p data-i18n="status.intro">Look up any application by ID to see its current stage at a glance, then jump into Human Review for the full detail — field decisions, OTP, delegate approval, audit log, and reports.</p>
+            <form id="status-lookup-form" class="status-lookup-form">
+              <label data-i18n="status.idLabel">Application ID
+                <input type="text" id="status-lookup-id" placeholder="application UUID" required />
+              </label>
+              <button type="submit" data-i18n="status.lookup">Look Up</button>
+            </form>
+            <div id="status-lookup-result" class="status-lookup-result"></div>
+          </div>
+        </section>
+
+        <!-- ===================== Support Dashboard (Human Assistance demo) ===================== -->
+        <section class="page" id="page-support" data-page="support">
+          <div class="card">
+            <p class="assist-demo-banner">
+              🧪 Demo feature — requests, joins, and "Take Control" here are simulated in the browser
+              (via local storage) for demonstration purposes only. There is no real screen sharing, remote
+              desktop, or WebRTC connection; nothing here talks to the production backend services.
+            </p>
+            <label class="assist-officer-name-label">Your name (shown to applicants as the assisting officer)
+              <input type="text" id="assist-officer-name" placeholder="e.g. Asha (Support Officer)" />
+            </label>
+
+            <h3>Pending &amp; active requests</h3>
+            <div class="assist-request-table-wrap">
+              <table class="assist-request-table">
+                <thead>
+                  <tr>
+                    <th>Applicant</th>
+                    <th>Bank</th>
+                    <th>Service</th>
+                    <th>Current step</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="assist-request-tbody">
+                  <tr class="assist-request-empty-row">
+                    <td colspan="6">No assistance requests yet. Click "Need Help" from any workflow page to create one (open this app in a second tab to see it appear here live).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="assist-session-panel" class="assist-session-panel" hidden>
+              <div class="assist-session-header">
+                <div>
+                  <strong id="assist-session-title">Session</strong>
+                  <span id="assist-session-status" class="badge"></span>
+                </div>
+                <button type="button" id="assist-end-session-btn" class="secondary-btn">End Session</button>
+              </div>
+
+              <div class="assist-session-body">
+                <div class="assist-session-column">
+                  <h4>Guidance</h4>
+                  <div id="assist-message-log" class="assist-message-log"></div>
+                  <form id="assist-send-guidance-form" class="assist-send-guidance-form">
+                    <input type="text" id="assist-guidance-input" placeholder="Type guidance for the applicant..." />
+                    <button type="submit">Send</button>
+                  </form>
+                  <div class="assist-control-row">
+                    <button type="button" id="assist-take-control-btn" class="secondary-btn">Take Control</button>
+                    <span id="assist-control-status" class="assist-control-status"></span>
+                  </div>
+                </div>
+                <div class="assist-session-column">
+                  <h4>Activity timeline</h4>
+                  <ul id="assist-timeline-list" class="assist-timeline-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== Settings ===================== -->
+        <section class="page" id="page-settings" data-page="settings">
+          <div class="card">
+            <h3 data-i18n="settings.language">Language</h3>
+            <p data-i18n="settings.languageDesc">Choose the language for the Sahaay.AI interface and chat. This can also be changed anytime from the header.</p>
+            <div class="settings-row">
+              <select id="language-select-settings" aria-label="Choose language"></select>
+            </div>
+            <h3 data-i18n="settings.about">About this build</h3>
+            <p data-i18n="settings.aboutDesc">
+              Sahaay.AI never replaces an official website, never stores passwords/OTPs/PINs, and keeps a
+              human in control at every sensitive step. Every backend call below points at the same
+              independent microservices as before — this update only reorganizes the interface around them.
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ============================== Security confirmation modal ============================== -->
+  
+
+  <!-- ============================== Take Control floating assistant ============================== -->
+  <div class="take-control-panel" id="take-control-panel" hidden aria-live="polite">
+    <div class="take-control-header">
+      <span class="take-control-badge" aria-hidden="true">🤖</span>
+      <strong data-i18n="takeControl.heading">Take Control Mode</strong>
+      <button type="button" class="take-control-exit" id="take-control-exit" data-i18n="takeControl.exit">Exit</button>
+    </div>
+    <p id="take-control-step-text" class="take-control-step-text"></p>
+  </div>
+
+  <!-- ============================== Human Assistance (demo) — citizen side ============================== -->
+  <div class="assist-citizen-panel" id="assist-citizen-panel" hidden aria-live="polite">
+    <div class="assist-citizen-header">
+      <span aria-hidden="true">🧑‍💼</span>
+      <strong id="assist-citizen-title">Requesting human assistance…</strong>
+      <button type="button" class="take-control-exit" id="assist-cancel-btn">Cancel</button>
+    </div>
+    <p id="assist-citizen-status" class="assist-citizen-status"></p>
+    <div id="assist-citizen-messages" class="assist-citizen-messages" hidden></div>
+    <button type="button" class="assist-timeline-toggle" id="assist-citizen-timeline-toggle" hidden>View activity log</button>
+    <ul id="assist-citizen-timeline-list" class="assist-timeline-list" hidden></ul>
+    <button type="button" id="assist-return-control-btn" class="assist-return-control-btn" hidden>Return Control to Me</button>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="app-ui.js"></script>
+  <script src="assist.js"></script>
+</body>
+</html>

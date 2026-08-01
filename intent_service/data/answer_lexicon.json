@@ -1,0 +1,19 @@
+{
+  "_comment": "Words the answer parser recognizes as an affirmative/negative response to a yes/no eligibility question. English is always checked in addition to the resolved conversation language, since a citizen may answer in English even mid-conversation in another language. Purely data - a new language is supported the moment it's added here (and to intent_service's other Phase C3 language files), no code change.",
+  "affirmative": {
+    "en": ["yes", "y", "yeah", "yep", "sure", "correct", "true"],
+    "hi": ["हां", "हाँ", "जी हां", "जी हाँ", "सही"],
+    "mr": ["होय", "हो", "बरोबर"],
+    "bn": ["হ্যাঁ", "হ্যা", "ঠিক"],
+    "ta": ["ஆம்", "ஆமாம்", "சரி"],
+    "te": ["అవును", "సరే", "ఔను"]
+  },
+  "negative": {
+    "en": ["no", "n", "nope", "not", "false", "incorrect"],
+    "hi": ["नहीं", "नही", "ना"],
+    "mr": ["नाही", "नको"],
+    "bn": ["না", "নাহ"],
+    "ta": ["இல்லை", "இல்ல"],
+    "te": ["కాదు", "లేదు"]
+  }
+}

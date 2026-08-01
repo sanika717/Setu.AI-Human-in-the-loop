@@ -1,0 +1,40 @@
+{
+  "applicant_id": "APP-1001",
+  "service_id": "nsap_old_age_pension",
+  "fields": [
+    {
+      "field": "full_name",
+      "value": "Ramesh Kumar",
+      "confidence": 0.94,
+      "confidence_level": "high",
+      "source_document": "aadhaar",
+      "reason": "Exact match found on Aadhaar card"
+    },
+    {
+      "field": "date_of_birth",
+      "value": "1958-03-12",
+      "confidence": 0.88,
+      "confidence_level": "high",
+      "source_document": "aadhaar",
+      "reason": "Clearly printed date field"
+    },
+    {
+      "field": "bank_account_number",
+      "value": "0091234567890",
+      "confidence": 0.62,
+      "confidence_level": "medium",
+      "source_document": "bank_passbook",
+      "reason": "Partially obscured by a stamp; manual review recommended",
+      "required": true
+    },
+    {
+      "field": "nominee_name",
+      "value": null,
+      "confidence": 0.2,
+      "confidence_level": "low",
+      "source_document": "pension_form",
+      "reason": "Field left blank in the source document",
+      "required": false
+    }
+  ]
+}

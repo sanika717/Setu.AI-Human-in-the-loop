@@ -1,0 +1,305 @@
+/* ============================================================================
+ * assist.css — SAHAAY.AI Human Assistance (demo) styling. Purely additive:
+ * reuses variables from style.css and modal classes from app-ui.css, and
+ * only adds new selectors for this feature's own elements.
+ * ==========================================================================*/
+
+/* ------------------------------ Need Help button --------------------------- */
+
+.need-help-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #e8b4b4;
+  background: #fff3f3;
+  color: #b23a3a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.need-help-btn:hover {
+  background: #ffe4e4;
+}
+
+/* ------------------------------ Demo banner -------------------------------- */
+
+.assist-demo-banner {
+  background: #fff8e1;
+  border: 1px solid #f0d99a;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: #7a5b00;
+  margin-bottom: 16px;
+}
+
+.assist-officer-name-label {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.assist-officer-name-label input {
+  display: block;
+  margin-top: 6px;
+  width: 100%;
+  max-width: 360px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------ Request table ------------------------------ */
+
+.assist-request-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.assist-request-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.assist-request-table th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+.assist-request-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.assist-request-empty-row td {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.badge-active {
+  background: #dbe9ff;
+  color: #1f4eda;
+}
+
+.badge-ended {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.assist-request-table button {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.assist-request-table button:disabled {
+  background: var(--border);
+  color: var(--muted);
+  cursor: default;
+}
+
+/* ------------------------------ Session panel ------------------------------ */
+
+.assist-session-panel {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  background: var(--bg);
+}
+
+.assist-session-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.assist-session-header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assist-session-body {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 760px) {
+  .assist-session-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.assist-session-column h4 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.assist-message-log {
+  min-height: 100px;
+  max-height: 220px;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+.assist-message-log .assist-message {
+  padding: 4px 0;
+  color: var(--text);
+}
+
+.assist-message-log .assist-message-empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.assist-send-guidance-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.assist-send-guidance-form input {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.assist-send-guidance-form button {
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.assist-control-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assist-control-status {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.assist-timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  font-size: 0.82rem;
+}
+
+.assist-timeline-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.assist-timeline-list li strong {
+  color: var(--text);
+}
+
+/* ------------------------------ Citizen-side floating panel ----------------- */
+
+.assist-citizen-panel {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: min(340px, calc(100vw - 40px));
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(16, 42, 67, 0.25);
+  padding: 16px 18px;
+  z-index: 91;
+}
+
+.assist-citizen-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.assist-citizen-header strong {
+  flex: 1;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.assist-citizen-status {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.assist-citizen-messages {
+  max-height: 150px;
+  overflow-y: auto;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+}
+
+.assist-timeline-toggle {
+  border: none;
+  background: none;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 0 8px;
+}
+
+.assist-return-control-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .assist-citizen-panel {
+    left: 12px;
+    right: 12px;
+    width: auto;
+  }
+}

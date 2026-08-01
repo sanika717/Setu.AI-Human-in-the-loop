@@ -1,0 +1,116 @@
+{
+  "_comment": "Phase C3 Tamil (ta) intent taxonomy for Sahaay.AI's KeywordIntentClassifier. Same intent_id set, labels, and service_category_hint values as data/intents.json (English) - only the keyword phrases and weights are localized.",
+  "language": "ta",
+  "intents": [
+    {
+      "intent_id": "pension_application",
+      "label": "Apply for a pension",
+      "service_category_hint": "pension",
+      "keywords": [
+        {"phrase": "முதுமைப் பென்சன்", "weight": 3},
+        {"phrase": "விதவைப் பென்சன்", "weight": 3},
+        {"phrase": "மாற்றுத்திறனாளி பென்சன்", "weight": 3},
+        {"phrase": "குடும்ப நல பென்சன்", "weight": 3},
+        {"phrase": "பென்சன்", "weight": 2},
+        {"phrase": "என்எஸ்ஏபி", "weight": 2},
+        {"phrase": "மாதாந்திர உதவித்தொகை", "weight": 1},
+        {"phrase": "மூத்த குடிமக்கள் சலுகை", "weight": 1},
+        {"phrase": "பென்சனுக்கு விண்ணப்பிக்க", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "identity_document_update",
+      "label": "Update or apply for an identity document",
+      "service_category_hint": "identity",
+      "keywords": [
+        {"phrase": "ஆதார்", "weight": 3},
+        {"phrase": "முகவரியைப் புதுப்பிக்க", "weight": 2},
+        {"phrase": "பாஸ்போர்ட்", "weight": 3},
+        {"phrase": "எனது ஆதாரைப் புதுப்பிக்க", "weight": 3},
+        {"phrase": "புதிய பாஸ்போர்ட்", "weight": 2},
+        {"phrase": "பாஸ்போர்ட் புதுப்பித்தல்", "weight": 2},
+        {"phrase": "அடையாள ஆவணம்", "weight": 2},
+        {"phrase": "அடையாள சான்று", "weight": 1},
+        {"phrase": "பயோமெட்ரிக் புதுப்பிப்பு", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "banking_kyc",
+      "label": "Bank account or KYC update",
+      "service_category_hint": "banking",
+      "keywords": [
+        {"phrase": "கேஒய்சி", "weight": 3},
+        {"phrase": "வங்கிக் கணக்கு", "weight": 2},
+        {"phrase": "எஸ்பிஐ", "weight": 2},
+        {"phrase": "எனது கேஒய்சியைப் புதுப்பிக்க", "weight": 3},
+        {"phrase": "வங்கி பாஸ்புக்", "weight": 2},
+        {"phrase": "கணக்கு விவரங்கள்", "weight": 1},
+        {"phrase": "மறு-கேஒய்சி", "weight": 3},
+        {"phrase": "வங்கி கிளை", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "tax_services",
+      "label": "PAN card / tax-related service",
+      "service_category_hint": "tax",
+      "keywords": [
+        {"phrase": "பான் கார்டு", "weight": 3},
+        {"phrase": "பான் எண்", "weight": 2},
+        {"phrase": "வருமான வரி", "weight": 2},
+        {"phrase": "வரி தாக்கல்", "weight": 2},
+        {"phrase": "பானுக்கு விண்ணப்பிக்க", "weight": 3},
+        {"phrase": "நிரந்தர கணக்கு எண்", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "insurance_services",
+      "label": "Insurance premium or policy service",
+      "service_category_hint": "insurance",
+      "keywords": [
+        {"phrase": "எல்ஐசி", "weight": 3},
+        {"phrase": "காப்பீட்டு பிரீமியம்", "weight": 3},
+        {"phrase": "பாலிசி கட்டணம்", "weight": 2},
+        {"phrase": "எனது பிரீமியத்தை செலுத்த", "weight": 3},
+        {"phrase": "வாழ்க்கை காப்பீடு", "weight": 2},
+        {"phrase": "பாலிசி எண்", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "application_status_check",
+      "label": "Check status of an existing application",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "எனது விண்ணப்பத்தின் நிலை", "weight": 3},
+        {"phrase": "விண்ணப்ப நிலை", "weight": 3},
+        {"phrase": "எனது விண்ணப்பத்தைக் கண்காணிக்க", "weight": 2},
+        {"phrase": "எனது விண்ணப்பம் அங்கீகரிக்கப்பட்டதா", "weight": 3},
+        {"phrase": "எனக்கு என்ன ஆனது", "weight": 1},
+        {"phrase": "நிலையை சரிபார்க்க", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "general_help",
+      "label": "General guidance or \"what can you help with\"",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "நீங்கள் என்ன உதவி செய்ய முடியும்", "weight": 3},
+        {"phrase": "இது எப்படி வேலை செய்கிறது", "weight": 2},
+        {"phrase": "எனக்கு உதவி தேவை", "weight": 2},
+        {"phrase": "என்ன சேவைகள்", "weight": 2},
+        {"phrase": "எனக்கு வழிகாட்டு", "weight": 1},
+        {"phrase": "எனக்கு உதவு", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "greeting",
+      "label": "Greeting / small talk",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "வணக்கம்", "weight": 2},
+        {"phrase": "காலை வணக்கம்", "weight": 2},
+        {"phrase": "மதிய வணக்கம்", "weight": 2},
+        {"phrase": "நன்றி", "weight": 1}
+      ]
+    }
+  ]
+}

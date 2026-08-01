@@ -1,0 +1,117 @@
+{
+  "_comment": "Phase C1 intent taxonomy for Sahaay.AI's KeywordIntentClassifier. Each intent is data, not code - adding a new intent or improving one's recall means editing this file, the same 'data over code' philosophy official_service_registry/data/services.json already uses. `service_category_hint` foreshadows Phase C2 (intent -> Official Service Registry lookup) but is not consumed by anything in Phase C1.",
+  "intents": [
+    {
+      "intent_id": "pension_application",
+      "label": "Apply for a pension",
+      "service_category_hint": "pension",
+      "keywords": [
+        {"phrase": "old age pension", "weight": 3},
+        {"phrase": "widow pension", "weight": 3},
+        {"phrase": "disability pension", "weight": 3},
+        {"phrase": "family benefit pension", "weight": 3},
+        {"phrase": "pension", "weight": 2},
+        {"phrase": "nsap", "weight": 2},
+        {"phrase": "monthly allowance", "weight": 1},
+        {"phrase": "senior citizen benefit", "weight": 1},
+        {"phrase": "apply for pension", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "identity_document_update",
+      "label": "Update or apply for an identity document",
+      "service_category_hint": "identity",
+      "keywords": [
+        {"phrase": "aadhaar", "weight": 3},
+        {"phrase": "update address", "weight": 2},
+        {"phrase": "passport", "weight": 3},
+        {"phrase": "update my aadhaar", "weight": 3},
+        {"phrase": "new passport", "weight": 2},
+        {"phrase": "renew passport", "weight": 2},
+        {"phrase": "identity document", "weight": 2},
+        {"phrase": "id proof", "weight": 1},
+        {"phrase": "biometric update", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "banking_kyc",
+      "label": "Bank account or KYC update",
+      "service_category_hint": "banking",
+      "keywords": [
+        {"phrase": "kyc", "weight": 3},
+        {"phrase": "bank account", "weight": 2},
+        {"phrase": "sbi", "weight": 2},
+        {"phrase": "update my kyc", "weight": 3},
+        {"phrase": "bank passbook", "weight": 2},
+        {"phrase": "account details", "weight": 1},
+        {"phrase": "re-kyc", "weight": 3},
+        {"phrase": "bank branch", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "tax_services",
+      "label": "PAN card / tax-related service",
+      "service_category_hint": "tax",
+      "keywords": [
+        {"phrase": "pan card", "weight": 3},
+        {"phrase": "pan number", "weight": 2},
+        {"phrase": "income tax", "weight": 2},
+        {"phrase": "tax filing", "weight": 2},
+        {"phrase": "apply for pan", "weight": 3},
+        {"phrase": "permanent account number", "weight": 3}
+      ]
+    },
+    {
+      "intent_id": "insurance_services",
+      "label": "Insurance premium or policy service",
+      "service_category_hint": "insurance",
+      "keywords": [
+        {"phrase": "lic", "weight": 3},
+        {"phrase": "insurance premium", "weight": 3},
+        {"phrase": "policy payment", "weight": 2},
+        {"phrase": "pay my premium", "weight": 3},
+        {"phrase": "life insurance", "weight": 2},
+        {"phrase": "policy number", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "application_status_check",
+      "label": "Check status of an existing application",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "status of my application", "weight": 3},
+        {"phrase": "application status", "weight": 3},
+        {"phrase": "track my application", "weight": 2},
+        {"phrase": "has my application been approved", "weight": 3},
+        {"phrase": "what happened to my", "weight": 1},
+        {"phrase": "check status", "weight": 2}
+      ]
+    },
+    {
+      "intent_id": "general_help",
+      "label": "General guidance or \"what can you help with\"",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "what can you help", "weight": 3},
+        {"phrase": "how does this work", "weight": 2},
+        {"phrase": "i need help", "weight": 2},
+        {"phrase": "what services", "weight": 2},
+        {"phrase": "guide me", "weight": 1},
+        {"phrase": "help me", "weight": 1}
+      ]
+    },
+    {
+      "intent_id": "greeting",
+      "label": "Greeting / small talk",
+      "service_category_hint": null,
+      "keywords": [
+        {"phrase": "hello", "weight": 2},
+        {"phrase": "hi", "weight": 1},
+        {"phrase": "namaste", "weight": 2},
+        {"phrase": "good morning", "weight": 2},
+        {"phrase": "good afternoon", "weight": 2},
+        {"phrase": "thank you", "weight": 1}
+      ]
+    }
+  ]
+}

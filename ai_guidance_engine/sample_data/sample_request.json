@@ -1,0 +1,13 @@
+{
+  "applicant_id": "123",
+  "documents": [
+    {
+      "type": "aadhaar",
+      "text": "Applicant Name: Ramesh Patil"
+    },
+    {
+      "type": "income_certificate",
+      "text": "Pension Type: Old Age"
+    }
+  ]
+}
