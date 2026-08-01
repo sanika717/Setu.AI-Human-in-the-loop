@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Sahaay.AI
+# Setu.AI
 
 A multilingual AI Digital Trust & Guidance Platform that guides citizens
 through official government and banking websites. It never replaces an
